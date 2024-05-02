@@ -12,7 +12,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
         with:
-          ref: dev-brij
+          ref: dev-wei
       - name: Set up Python 3.11
         uses: actions/setup-python@v5
         with:
@@ -30,4 +30,13 @@ jobs:
           name: deepchecks results
           path: output.html
   sec:
-    
+    runs-on: ubuntu-latest
+    steps:
+      - name Bandit
+      uses: mdegis/bandit-action@v1.0
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        path: "."
+        level: high
+        confidence: high
+        exit_zero: true
