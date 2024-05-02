@@ -18,10 +18,4 @@ jobs:
         with:
           python-version: '3.11'
       - name: Bandit
-        uses: mdegis/bandit-action@v1.0
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          path: "."
-          level: low
-          confidence: low
-          exit_zero: true
+        uses: tj-actions/bandit@v5.1
