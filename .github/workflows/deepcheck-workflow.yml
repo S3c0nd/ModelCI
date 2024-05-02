@@ -1,7 +1,7 @@
 name: GitHub Actions Demo
 on:
   push:
-    branches: [ main, dev-brij ]
+    branches: [ main, dev-brij, dev-wei ]
   pull_request:
     branches: [ main ]
 
@@ -29,3 +29,5 @@ jobs:
         with:
           name: deepchecks results
           path: output.html
+  sec:
+    
