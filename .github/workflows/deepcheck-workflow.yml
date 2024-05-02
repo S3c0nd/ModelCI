@@ -29,14 +29,11 @@ jobs:
         with:
           name: deepchecks results
           path: output.html
-  sec:
-    runs-on: ubuntu-latest
-    steps:
-      - name Bandit
+      - name: Bandit
       uses: mdegis/bandit-action@v1.0
-      with:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        path: "."
-        level: high
-        confidence: high
-        exit_zero: true
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          path: "."
+          level: high
+          confidence: high
+          exit_zero: true
