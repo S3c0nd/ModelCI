@@ -1,7 +1,7 @@
 name: GitHub Actions Demo
 on:
   push:
-    branches: [ main, dev-brij, dev-wei ]
+    branches: [ main, dev-wei ]
   pull_request:
     branches: [ main ]
 
@@ -29,11 +29,3 @@ jobs:
         with:
           name: deepchecks results
           path: output.html
-      - name: Bandit
-      uses: mdegis/bandit-action@v1.0
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          path: "."
-          level: high
-          confidence: high
-          exit_zero: true
